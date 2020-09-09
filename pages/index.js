@@ -1,51 +1,76 @@
-import { Modal, Button, Icon } from 'semantic-ui-react'
+import { Header, Button, Card, List } from "semantic-ui-react";
 
-import SmallImage from './SmallImage.png'
-import LargeImage from './LargeImage.png'
-
+import Layout from "../components/Layout";
 export default function Home() {
   return (
-    <div className="centered">
-      <Icon size="massive" name="world" />
+    <Layout>
+      <Header as="h2">Power to the people</Header>
+      <p>A fairer place for both trader and liquidity provider</p>
+      <Button>Swap(coming soon)</Button>
       <div className="separator" />
-      <Modal trigger={<Button>Show Modal</Button>}>
-        <Modal.Header>
-          <em>publicPath</em> should be set to <em>/_next/static/</em>
-        </Modal.Header>
-        <Modal.Content>
-          <Modal.Description>
-            <div className="wrapper">
-              <div className="row">
-                <p>
-                  Larger content should be still available as a fallback to{' '}
-                  <em>fileLoader</em> but it should not pollute{' '}
-                  <em>/.next/static/css</em> folder. You should see two images
-                  below. One, smaller, loaded as data url, and one, bigger,
-                  loaded via url.
-                </p>
-              </div>
-              <div className="row">
-                <img src={SmallImage} />
-                <p>
-                  A small image should be loaded as data url:{' '}
-                  <em>{SmallImage.substr(0, 100)}...</em>
-                </p>
-              </div>
-
-              <div className="row">
-                <img src={LargeImage} />
-                <p>
-                  A large image should be loaded as a url: <em>{LargeImage}</em>
-                </p>
-              </div>
-              <p className="border">
-                You should also still be able to load regular css. This text
-                should have border.
-              </p>
-            </div>
-          </Modal.Description>
-        </Modal.Content>
-      </Modal>
-    </div>
-  )
+      <Button>Learn more about how Wasabi is superior</Button>
+      <div className="separator" />
+      <div className="separator" />
+      <p>Stake liquidity today to earn WAS governance token</p>
+      <Card.Group itemsPerRow={3}>
+        <Card>
+          <Card.Content textAlign="center">
+            <Card.Header>Your WAS Balance</Card.Header>
+            <Card.Meta>
+              <span>10,000</span>
+            </Card.Meta>
+            <Card.Description>Withdrawable Balance: 100,000</Card.Description>
+          </Card.Content>
+          <Card.Content textAlign="center">
+            <List>
+              <List.Item>
+                <Button>Withdraw</Button>
+              </List.Item>
+              <List.Item>
+                <Button>Tutorial</Button>
+              </List.Item>
+            </List>
+          </Card.Content>
+        </Card>
+        <Card>
+          <Card.Content textAlign="center">
+            <Card.Header>Highest APY</Card.Header>
+            <Card.Meta>
+              <span>200%</span>
+            </Card.Meta>
+            <Card.Description>Pool: xxx pool</Card.Description>
+          </Card.Content>
+          <Card.Content textAlign="center">
+            <List>
+              <List.Item>
+                <Button>See Pools</Button>
+              </List.Item>
+              <List.Item>
+                <Button>Tutorial</Button>
+              </List.Item>
+            </List>
+          </Card.Content>
+        </Card>
+        <Card>
+          <Card.Content textAlign="center">
+            <Card.Header>Token price</Card.Header>
+            <Card.Meta>
+              <span>1,000,000</span>
+            </Card.Meta>
+            <Card.Description>Total supply: 1,000</Card.Description>
+          </Card.Content>
+          <Card.Content textAlign="center">
+            <List>
+              <List.Item>
+                <Button>Buy/Sell</Button>
+              </List.Item>
+              <List.Item>
+                <Button>Tutorial</Button>
+              </List.Item>
+            </List>
+          </Card.Content>
+        </Card>
+      </Card.Group>
+    </Layout>
+  );
 }
